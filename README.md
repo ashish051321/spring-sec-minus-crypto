@@ -7,8 +7,7 @@ A Spring Boot application with REST APIs protected by Spring Security using basi
 - Spring Boot 2.7.18 with Spring Security
 - REST API endpoints with authentication
 - In-memory user management
-- BCrypt password encoding
-- Basic authentication
+- Basic authentication (no-op password encoding)
 
 ## API Endpoints
 
@@ -31,6 +30,8 @@ The application comes with two pre-configured users:
    - Username: `admin`
    - Password: `admin123`
    - Role: `USER`, `ADMIN`
+
+**Note:** Passwords are stored using a custom no-op password encoder that doesn't use crypto dependencies.
 
 ## Running the Application
 
@@ -94,7 +95,7 @@ src/
 The application uses Spring Security with:
 - Basic authentication
 - In-memory user management
-- BCrypt password encoding
+- Custom no-op password encoder (no crypto dependency)
 - Protected API endpoints
 - Public health check endpoint
 
